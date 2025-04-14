@@ -13,6 +13,7 @@ public class FunctionTabulatorWhile {
     // Конструктор класу, який приймає об'єкт Scanner
     public FunctionTabulatorWhile(double start, double end, double step, double lowerBound, double upperBound) {
 
+
         this.start = start;
 
         this.end = end;
