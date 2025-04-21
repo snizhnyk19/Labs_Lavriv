@@ -5,14 +5,47 @@ import java.util.Scanner; // Імпортуємо клас Scanner для вве
 // Головний клас Main.java
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Створюємо об'єкт Scanner для зчитування введених даних
+        // Створюємо сканер для зчитування даних з клавіатури
+        Scanner scanner = new Scanner(System.in);
 
-        // Викликаємо методи з інших класів для виконання завдань
-        Task1.run(scanner); // Виконуємо завдання 1 (обчислення площі прямокутника)
-        Task2.run(scanner); // Виконуємо завдання 2 (пошук найменшого з трьох чисел)
-        Task3.run(scanner); // Виконуємо завдання 3 (введення і вивід масиву)
-        Task4.run(scanner); // Виконуємо завдання 4 (знаходження найбільшого числа в масиві)
+        // Завдання 1: Площа прямокутника
+        System.out.print("Введіть ширину прямокутника: ");
+        int width = scanner.nextInt();
+        System.out.print("Введіть висоту прямокутника: ");
+        int height = scanner.nextInt();
+        Task1 task1 = new Task1(width, height);
+        task1.run();
 
-        scanner.close(); // Закриваємо Scanner після використання
+        // Завдання 2: Найменше з трьох чисел
+        System.out.print("Введіть перше число: ");
+        int a = scanner.nextInt();
+        System.out.print("Введіть друге число: ");
+        int b = scanner.nextInt();
+        System.out.print("Введіть третє число: ");
+        int c = scanner.nextInt();
+        Task2 task2 = new Task2(a, b, c);
+        task2.run();
+
+        // Завдання 3: Виведення масиву
+        System.out.print("Введіть розмір масиву: ");
+        int size3 = scanner.nextInt();
+        int[] array3 = new int[size3];
+        System.out.println("Введіть елементи масиву:");
+        for (int i = 0; i < size3; i++) {
+            array3[i] = scanner.nextInt();
+        }
+        Task3 task3 = new Task3(array3);
+        task3.run();
+
+        // Завдання 4: Найбільше з масиву
+        System.out.print("Введіть розмір масиву: ");
+        int size4 = scanner.nextInt();
+        int[] array4 = new int[size4];
+        System.out.println("Введіть елементи масиву:");
+        for (int i = 0; i < size4; i++) {
+            array4[i] = scanner.nextInt();
+        }
+        Task4 task4 = new Task4(array4);
+        task4.run();
     }
 }
