@@ -2,7 +2,7 @@ package lab5; // Оголошуємо пакет lab5, в якому знахо�
 
 // Task3.java - Виведення масиву
 class Task3 {
-    private int[] array;
+    private final int[] array;
 
     public Task3(int[] array) {
         this.array = array;

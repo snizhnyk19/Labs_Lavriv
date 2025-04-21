@@ -2,7 +2,7 @@ package lab5; // Оголошуємо пакет lab5, в якому знахо�
 
 // Task4.java - Пошук найбільшого числа у масиві
 class Task4 {
-    private int[] array;
+    private final int[] array;
 
     public Task4(int[] array) {
         this.array = array;
