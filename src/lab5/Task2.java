@@ -3,7 +3,7 @@ package lab5; // Оголошуємо пакет lab5, в якому знахо�
 
 // Task2.java - Пошук найменшого з трьох чисел
 class Task2 {
-    private int a, b, c;
+    private final int a, b, c;
 
     public Task2(int a, int b, int c) {
         this.a = a;

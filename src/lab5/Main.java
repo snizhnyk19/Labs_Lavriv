@@ -15,6 +15,10 @@ public class Main {
         int height = scanner.nextInt();
         Task1 task1 = new Task1(width, height);
         task1.run();
+        System.out.println("Значення ширина :" + task1.getWidth());
+        task1.setWidth(50);
+        System.out.println("Нове значення ширина :" + task1.getWidth());
+
 
         // Завдання 2: Найменше з трьох чисел
         System.out.print("Введіть перше число: ");
