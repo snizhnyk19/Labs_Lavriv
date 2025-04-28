@@ -2,19 +2,7 @@ package lab6;
 
 // Завдання 5: Опис успішності студента
 public class Task5 {
-    public void run(java.util.Scanner scanner) {
-        System.out.print("Введіть прізвище: ");
-        String lastName = scanner.nextLine();
-        System.out.print("Введіть ім'я: ");
-        String firstName = scanner.nextLine();
-        System.out.print("Введіть оцінку 1: ");
-        int mark1 = scanner.nextInt();
-        System.out.print("Введіть оцінку 2: ");
-        int mark2 = scanner.nextInt();
-        System.out.print("Введіть оцінку 3: ");
-        int mark3 = scanner.nextInt();
-        scanner.nextLine(); // Прочитати Enter
-
+    public void run(String lastName, String firstName, int mark1, int mark2, int mark3) {
         Student student = new Student(lastName, firstName, mark1, mark2, mark3);
         student.printInfo();
         System.out.println("Середній бал: " + student.getAverageMark());
@@ -22,6 +10,8 @@ public class Task5 {
 }
 
 // Клас Student
+
+
 class Student {
     private String lastName;
     private String firstName;
@@ -44,3 +34,4 @@ class Student {
         return (mark1 + mark2 + mark3) / 3.0;
     }
 }
+

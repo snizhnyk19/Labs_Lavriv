@@ -1,29 +1,37 @@
 package lab6;
 
+import lab1.Task2;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //Task1
+        Task1 task1 = new Task1();
 
-//        Task1 task1 = new Task1();
-//
-//        // Введення для person1
-//        Person person1 = new Person();
-//        System.out.print("Введіть повне ім'я для першого об'єкта: ");
-//        person1.setFullName(scanner.nextLine());
-//        System.out.print("Введіть вік для першого об'єкта: ");
-//        person1.setAge(scanner.nextInt());
-//        scanner.nextLine(); // Очистка буфера
-//
-//        // person2 з Task1
-//        Person person2 = task1.getPredefinedPerson();
-//
-//        // Дії
-//        person1.move();
-//        person1.talk();
-//        person2.move();
-//        person2.talk();
+        // Введення для person1
+        Person person1 = new Person();
+        System.out.print("Введіть повне ім'я для першого об'єкта: ");
+        person1.setFullName(scanner.nextLine());
+        System.out.print("Введіть вік для першого об'єкта: ");
+        person1.setAge(scanner.nextInt());
+        scanner.nextLine(); // Очистка буфера
+
+        // person2 з Task1
+        Person person2 = task1.getPredefinedPerson();
+
+        // Дії
+        person1.move();
+        person1.talk();
+        person2.move();
+        person2.talk();
+
+
+        // Завдання 2: Клас Phone
+        Task2 task2 = new Task2();
+
+
 
 
         // Створення першого телефону
@@ -69,21 +77,32 @@ public class Main {
         phone3.sendMessage(numbers);
 
 
-//        // Завдання 2: Клас Phone
-//        Task2 task2 = new Task2();
-//        task2.run(scanner);
 
-//        // Завдання 3: Ієрархія Animal
-//        Task3 task3 = new Task3();
-//        task3.run();
-//
-//        // Завдання 4: Абстрактний клас Car
-//        Task4 task4 = new Task4();
-//        task4.run();
-//
-//        // Завдання 5: Клас Student
-//        Task5 task5 = new Task5();
-//        task5.run(scanner);
+
+        // Завдання 3: Ієрархія Animal
+        Task3 task3 = new Task3();
+        task3.run();
+
+        // Завдання 4: Абстрактний клас Car
+        Task4 task4 = new Task4();
+        task4.run();
+
+        // Завдання 5: Клас Student
+        System.out.print("Введіть прізвище: ");
+        String lastName = scanner.nextLine();
+        System.out.print("Введіть ім'я: ");
+        String firstName = scanner.nextLine();
+        System.out.print("Введіть оцінку 1: ");
+        int mark1 = scanner.nextInt();
+        System.out.print("Введіть оцінку 2: ");
+        int mark2 = scanner.nextInt();
+        System.out.print("Введіть оцінку 3: ");
+        int mark3 = scanner.nextInt();
+        scanner.nextLine(); // Очистити буфер
+
+        // Створення об'єкта Task5 і передача даних
+        Task5 task5 = new Task5();
+        task5.run(lastName, firstName, mark1, mark2, mark3);
     }
 }
 
