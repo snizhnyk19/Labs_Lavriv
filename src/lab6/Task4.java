@@ -39,7 +39,7 @@ class Sedan extends Car {
         super(model, color, maxSpeed);
     }
 
-    @Override
+
     public void brake() {
         System.out.println(model + " гальмує як легковий автомобіль.");
     }
@@ -51,7 +51,7 @@ class Truck extends Car {
         super(model, color, maxSpeed);
     }
 
-    @Override
+
     public void brake() {
         System.out.println(model + " гальмує як вантажівка.");
     }
