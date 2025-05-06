@@ -1,7 +1,7 @@
 package Lab7;
-
 import java.util.ArrayList;
 import java.util.Random;
+
 
 public class Car {
     String brand;
@@ -9,6 +9,10 @@ public class Car {
     Driver driver;
     double price;
     int year;
+
+    private double factor;
+    private double powerFactor;
+    private double priceFactor;
 
     public Car(String brand, double enginePower, Driver driver, double price, int year) {
         this.brand = brand;
@@ -18,13 +22,45 @@ public class Car {
         this.year = year;
     }
 
+    // Гетери
+    public double getFactor() {
+        return factor;
+    }
+
+    public double getPowerFactor() {
+        return powerFactor;
+    }
+
+    public double getPriceFactor() {
+        return priceFactor;
+    }
+
+    // Сетери
+    public void setFactor(double factor) {
+        this.factor = factor;
+    }
+
+    public void setPowerFactor(double powerFactor) {
+        this.powerFactor = powerFactor;
+    }
+
+    public void setPriceFactor(double priceFactor) {
+        this.priceFactor = priceFactor;
+    }
+
     public void repairEngine() {
-        this.enginePower *= 1.1;
+        if (getFactor() > 0) {
+            this.enginePower *= getFactor();
+        }
     }
 
     public void increasePowerAndPrice() {
-        this.enginePower *= 1.1;
-        this.price *= 1.05;
+        if (getPowerFactor() > 0) {
+            this.enginePower *= getPowerFactor();
+        }
+        if (getPriceFactor() > 0) {
+            this.price *= getPriceFactor();
+        }
     }
 
     @Override
@@ -38,6 +74,7 @@ public class Car {
                 '}';
     }
 }
+
 
 class Driver {
     String name;
@@ -63,6 +100,10 @@ class Driver {
                 '}';
     }
 }
+
+
+
+
 
 class Helper {
     public static void chooseRandomCar(ArrayList<Car> cars) {

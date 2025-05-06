@@ -18,26 +18,35 @@ public class Lab7_task1 {
         carPark.add(new Car("Nissan", 150, new Driver("Volodymyr", 32, 9), 20000, 2019));
         carPark.add(new Car("Mazda", 155, new Driver("Inna", 30, 8), 21000, 2020));
 
-        // Додати ще автомобілі (мінімум 10, максимум 20)
+        // Налаштування коефіцієнтів для ремонту та підвищення
+        double engineRepairFactor = 1.1;
+        double powerIncreaseFactor = 1.1;
+        double priceIncreaseFactor = 1.05;
 
-        // Робимо ремонт мотору для половини автопарку
+        // Ремонт мотору для половини автопарку
         for (int i = 0; i < carPark.size() / 2; i++) {
-            carPark.get(i).repairEngine();
-            carPark.get(i).driver = new Driver("NewDriver" + i, 25 + i, 3 + i); // наймаємо нових водіїв
+            Car car = carPark.get(i);
+            car.setFactor(engineRepairFactor);   // Встановлюємо коефіцієнт для ремонту
+            car.repairEngine();                  // Ремонтуємо мотор
+            car.driver = new Driver("NewDriver" + i, 25 + i, 3 + i);  // Наймаємо нових водіїв
         }
 
         // Підвищення потужності та ціни кожній другій машині
         for (int i = 1; i < carPark.size(); i += 2) {
-            carPark.get(i).increasePowerAndPrice();
+            Car car = carPark.get(i);
+            car.setPowerFactor(powerIncreaseFactor);  // Встановлюємо коефіцієнт для потужності
+            car.setPriceFactor(priceIncreaseFactor);  // Встановлюємо коефіцієнт для ціни
+            car.increasePowerAndPrice();              // Підвищуємо потужність і ціну
         }
 
-        // Перевірка досвіду водіїв
+        // Покращення навичок водіїв
         for (Car car : carPark) {
             if (car.driver.experience < 5 && car.driver.age > 25) {
-                car.driver.improveSkills();
+                car.driver.improveSkills();  // Покращуємо навички водіїв з досвідом менше 5 років
             }
         }
-        // Вибір випадкової машини та виклик методів виводу в консоль
+
+        // Вибір випадкової машини
         Helper.chooseRandomCar(carPark);
     }
 }
