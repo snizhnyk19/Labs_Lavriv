@@ -6,7 +6,6 @@ public class Main {
         Task1 t1 = new Task1();
         t1.task1();
 
-        // Викликаємо метод task2() з класу Task2
         Task2 t2 = new Task2();
         t2.task2();
 
